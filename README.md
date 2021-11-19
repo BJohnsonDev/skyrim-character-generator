@@ -1,5 +1,7 @@
 # Skyrim Character Generator
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/BJohnsonDev/pen/jOLdbZX](https://codepen.io/BJohnsonDev/pen/jOLdbZX).
+This Skyrim character generator was forked from [this CodePen created by nekoyoubi](https://codepen.io/nekoyoubi/pen/xddPoo) (currently non-functional) which was itself an adaptation from [Porchdrinker's dice-rolling method over on the Skyrim Forums](http://skyrimforums.org/sf/threads/random-character-creation-system-long.19549/). Full credit for the concept goes to them. I've tried my best to stay true to the original vision while adding my own fixes and improvements.
 
-This Skyrim character generator is an adaptation from [Porchdrinker's dice-rolling method over on the Skyrim Forums](http://skyrimforums.org/sf/threads/random-character-creation-system-long.19549/). I've added a few things, changed a few things, wrote some code, etc; otherwise the credit should be theirs. Lore names were also borrowed from [insane0hflex](https://insane0hflex.github.io/TesNameGenerator/)
+Name generation has been completely rewritten based on [conantroutman's name generator](https://github.com/conantroutman/vue-tesnamegenerator)
+
+Feel free to suggest additions/changes, fork this repo, mock my poorly written code, etc.
