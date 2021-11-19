@@ -493,8 +493,8 @@ class Character extends React.Component {
         React.createElement("button", { className: "reroll", onClick: this.handleReroll.bind(this) }, "\u21BB Reroll Character"),
         React.createElement("br", null),
         React.createElement("table", null,
-          React.createElement("tr", null,
-            React.createElement("td", { className: "label" }, "Seed"), React.createElement("td", null, React.createElement("a", { href: "https://BJohnsonDev.github.io/skyrim-character-generator?seed=" + this.state.seed, title: "Right-click and copy this link to share this character." }, this.state.seed))),
+          // React.createElement("tr", null,
+          //   React.createElement("td", { className: "label" }, "Seed"), React.createElement("td", null, React.createElement("a", { href: "https://BJohnsonDev.github.io/skyrim-character-generator?seed=" + this.state.seed, title: "Right-click and copy this link to share this character." }, this.state.seed))),
 
           React.createElement("tr", null,
             React.createElement("td", { className: "label" }, "Name"), React.createElement("td", null, nameText)),
