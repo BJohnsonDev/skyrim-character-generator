@@ -206,7 +206,7 @@ const getQueryParam = (name, url) => {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
 
-const randomCharacter = () => {
+async function randomCharacter() {
   let c = {
     seed: "0",
     name: "",
@@ -254,11 +254,11 @@ const randomCharacter = () => {
     c.skill2.to36() +
     c.skill3.to36() +
     "";
-  c.name = generateName(_genders.getItem(c.gender)[0].toLowerCase(), _races.getItem(c.race)[0].toLowerCase(), c.seed.from36());
+  c.name = await generateName(_genders.getItem(c.gender)[0].toLowerCase(), _races.getItem(c.race)[0].toLowerCase(), c.seed.from36());
   return c;
 };
 
-const loadCharacter = seed => {
+async function loadCharacter(seed) {
   let c = {
     seed: seed,
     name: "",
@@ -275,16 +275,16 @@ const loadCharacter = seed => {
     skill3: parseInt(seed.charAt(10), 36)
   };
 
-  c.name = generateName(_genders.getItem(c.gender)[0].toLowerCase(), _races.getItem(c.race)[0].toLowerCase(), c.seed.from36());
+  c.name = await generateName(_genders.getItem(c.gender)[0].toLowerCase(), _races.getItem(c.race)[0].toLowerCase(), c.seed.from36());
   return c;
 };
 
-const generateName = (gender, race, seed) => {
+async function generateName(gender, race, seed) {
   //	let seed = (((g+1)*789)*(r*321))^(1234321);
   var name = "Nameless";
 
   try {
-    fetch("./names/" + race + ".json")
+    await fetch("./names/" + race + ".json")
       .then(response => response.json())
       .then(nameList => {
         switch (race) {
@@ -331,12 +331,6 @@ const generateName = (gender, race, seed) => {
   } finally {
     return name;
   }
-};
-
-const loadNames = race => {
-  fetch("./names/" + race + ".json")
-    .then(response => response.json())
-    .then(data => { return data });
 };
 
 const getRandomName = names => {
