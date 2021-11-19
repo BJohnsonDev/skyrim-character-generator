@@ -429,8 +429,10 @@ class Character extends React.Component {
     this.handleReroll = this.handleReroll.bind(this);
   }
   handleReroll(e) {
-    this.setState(randomCharacter());
-    this.forceUpdate();
+    randomCharacter()
+    .then(newChar => {
+      this.setState(newChar);
+    });
   }
   componentDidMount() {
     randomCharacter()
