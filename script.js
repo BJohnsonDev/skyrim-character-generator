@@ -425,12 +425,18 @@ class Character extends React.Component {
   constructor(props) {
     super(props);
     let seed = getQueryParam("seed");
-    this.state = (seed || "") == "" ? randomCharacter() : loadCharacter(seed);
+    this.state = {seed: seed}; //(seed || "") == "" ? randomCharacter() : loadCharacter(seed);
     this.handleReroll = this.handleReroll.bind(this);
   }
   handleReroll(e) {
     this.setState(randomCharacter());
     this.forceUpdate();
+  }
+  componentDidMount() {
+    randomCharacter()
+    .then(newChar => {
+      this.setState(newChar);
+    });
   }
   render() {
     let nameText = this.state.name;
