@@ -545,7 +545,8 @@ class Character extends React.Component {
           React.createElement("tr", null,
             React.createElement("td", { className: "label", title: homeOverview }, "Home"),
             React.createElement("td", null,
-              React.createElement("a", { href: homeLink, target: "_blank", style: { marginRight: '10px', whiteSpace: 'nowrap' } }, homeText),
+              React.createElement("a", { href: homeLink, target: "_blank", style: { marginRight: '5px', whiteSpace: 'nowrap' } }, homeText),
+              React.createElement("br", null),
               React.createElement("code", null, "coc\xA0", homeCOC))),
 
 
